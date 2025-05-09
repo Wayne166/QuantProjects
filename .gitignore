@@ -1,0 +1,22 @@
+# 系统/IDE文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Python环境
+env/
+__pycache__/
+*.py[cod]
+
+# 数据文件
+data/raw/
+data/tick/
+
+# 敏感配置
+config/.env.*
+
+# 日志/缓存
+logs/
+*.log
+
