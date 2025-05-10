@@ -1,3 +1,5 @@
+### 更新后的.gitignore文件内容 ###
+
 ### Python开发规范 ###
 __pycache__/
 *.py[cod]
@@ -33,10 +35,8 @@ logs/
 *.log
 
 ### 敏感文件 ###
-config/.env*
-!config/config.yaml  # 白名单：允许提交非敏感配置
-env_config/dev_environment.spec
-env_config/dev_requirements.txt
+config/.env*           # 忽略所有.env开头的文件
+!config/config.yaml    # 白名单：允许提交非敏感配置
 
 ### 系统文件 ###
 .DS_Store
@@ -47,10 +47,16 @@ Desktop.ini
 /target/
 /dist/
 /build/
-*.spec
+# *.spec  <-- 已注释
 *.exe
 *.manifest
 *.egg
 
 ### 自定义忽略 ###
 notebooks/.ipynb_checkpoints/
+
+# === 例外规则 ===
+# 允许跟踪 env_config 目录下的 spec 和 txt 文件
+env_config/*           # 先排除目录下所有文件
+!env_config/*.spec     # 再允许.spec文件
+!env_config/*.txt      # 最后允许.txt文件

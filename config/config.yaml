@@ -1,0 +1,4 @@
+env_files:
+  dev: config/.env.dev
+  prod: config/.env.prod
+permissions: 644
