@@ -1,0 +1,5 @@
+extends: default
+rules:
+  document-start: disable  # 允许文件不以 --- 开头
+  line-length: disable     # 禁用行长度限制
+  trailing-spaces: enable  # 启用行尾空格检查
