@@ -1,0 +1,26 @@
+name: Python3.10 CI
+
+# yamllint disable rule:truthy
+on:
+  push:
+    branches: [main, python3.10-dev]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pre-commit install
+      - name: Run pre-commit checks
+        run: pre-commit run --all-files
+      - name: Run tests
+        run: pytest tests/
